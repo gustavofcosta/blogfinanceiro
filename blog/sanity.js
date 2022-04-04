@@ -1,7 +1,8 @@
+import createImageUrlBuilder from "@sanity/image-url"
 import {
-    createImageUrlBuilder,
-    createCurrentUseHook,
+    createCurrentUserHook,
     createClient,
+    // createUrlBuilder
 } from "next-sanity";
 
 export const config = {
@@ -9,11 +10,13 @@ export const config = {
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     apiVersion: "2021-03-25",
 
-    useCDN: process.env.NODE_ENV === "production",
+    useCdn: process.env.NODE_ENV === "production",
 };
 
 export const sanityClient = createClient(config);
 
 export const urlFor = (source) => createImageUrlBuilder(config).image(source);
 
-export const useCurrentUser = createCurrentUseHook(config);
+// export const urlVideo = (source) => createUrlBuilder(config).image(source);
+
+export const useCurrentUser = createCurrentUserHook(config);

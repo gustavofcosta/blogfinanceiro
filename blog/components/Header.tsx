@@ -10,15 +10,15 @@ function Header() {
                 <div className="hidden md:inline-flex items-center space-x-5">
                     <h3>Sobre</h3>
                     <h3>Contate-nos</h3>
-                    <h3 className="text-white bg-blue-700 px-4 py-1 rounded-full">Seguir</h3>
+                    <h3 className="text-white bg-red-500 px-4 py-1 rounded-full">Seguir</h3>
                 </div>
             </div>
 
-            <div className="flex items-center space-x-5 text-blue-700">
+            <div className="flex items-center space-x-5 text-red-500">
                 <h3>
                     Sing In
                 </h3>
-                <h3 className="border px-4 py-1 rounded-full border-blue-700">
+                <h3 className="border px-4 py-1 rounded-full border-red-500">
                     Get Started
                 </h3>
             </div>
