@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import { sanityClient } from "../sanity"
+import { sanityClient, urlFor } from "../sanity"
 import { Post } from '../typings'
 import Header from '../components/Header'
+import Link from 'next/Link'
 
 interface Props {
   posts: [Post]
@@ -33,21 +34,18 @@ export default function Home({ posts }: Props) {
       {/* posts */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 p-4 md:p-6'>
         {posts.map((post) => (
-          <div key={post._id}>
+          <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-              {/* <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform durantion-200 ease-in-out' src={urlFor(post.mainImage).url()!} /> */}
-              <video controls >
-                <source src={post.video} />
-              </video>
-              {/* <div className='flex justify-between p-5 bg-white'>
+              <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
+              <div className='flex justify-between p-5 bg-white'>
                 <div>
                   <p className='text-lg font-bold'>{post.title}</p>
                   <p className='text-xs'>{post.description} by {post.author.name}</p>
                 </div>
                 <img className='h-12 w-12 rounded-full' src={urlFor(post.author.image).url()!} alt="" />
-              </div> */}
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div >

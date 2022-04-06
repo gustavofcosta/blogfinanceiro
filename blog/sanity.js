@@ -17,6 +17,4 @@ export const sanityClient = createClient(config);
 
 export const urlFor = (source) => createImageUrlBuilder(config).image(source);
 
-// export const urlVideo = (source) => createUrlBuilder(config).image(source);
-
 export const useCurrentUser = createCurrentUserHook(config);
