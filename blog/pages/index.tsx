@@ -19,11 +19,11 @@ export default function Home({ posts }: Props) {
 
       <Header />
 
-      <div className='flex justify-between items-center bg-green-500  border-y border-black py-10 lg:py-0'>
+      <div className='flex justify-between items-center bg-yellow-500  border-y border-black py-10 lg:py-0'>
         <div className="px-10 space-y-5">
-          <h1 className="text-5xl max-w-xl font-serif"><span className="underline decoration-black decoration-4">Naturezando</span> aqui você encontrará sensação de conforto, tranquilidade e alegria.</h1>
+          <h1 className="text-5xl max-w-xl font-serif"><span className="underline decoration-black decoration-4">Criptomoedas</span> Investir em conhecimento rende sempre os melhores juros.</h1>
           <h2>
-            Todos os dias faça o exercício de encontrar algo bom em si mesmo.
+            - Benjamin Franklin
           </h2>
         </div>
 
