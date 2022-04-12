@@ -84,7 +84,7 @@ function Post({ post }: Props) {
             <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
             {submitted ? (
-                <div className="flex flex-col py-10 my-10 border-yellow-500 text-white max-w-2xl mx-auto">
+                <div className="bg-yellow-500 flex flex-col p-10 my-10 border-yellow-500 text-white max-w-2xl mx-auto">
                     <h3 className="text-3xl font-bold">
                         Thank you for submitting your comment!
                     </h3>
@@ -140,8 +140,21 @@ function Post({ post }: Props) {
                     <input type="submit" className="shadow bg-yellow-500 hover:bg-yellow-500 focus:shadow-outline text-white font-bold py-2 px-4 rounded cursor-pointer" />
                 </form >
 
-            )
-            }
+            )}
+
+            {/* Comments */}
+            <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
+                <h3 className="text-4xl">Comments</h3>
+                <hr className="pb-2" />
+
+                {post.comments.map((comment) => (
+                    <div key={comment._id}>
+                        <p>
+                            <span className="text-yellow-500 font-bold">{comment.name}: </span> <span>{comment.comment}</span>
+                        </p>
+                    </div>
+                ))}
+            </div>
 
         </main >
     )
@@ -183,7 +196,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
         'comments': *[
             _type == "comment" &&
-            post.ref == ^._id &&
+            post._ref == ^._id &&
             approved == true],
         description,
         mainImage,
