@@ -79,7 +79,6 @@ function Post({ post }: Props) {
                                         <p className="text-base"
                                             {...props}
                                         />),
-                                    ),
                                     li: ({ Children }: any) => (
                                         <li className="ml-4 list-disc">{Children}</li>
                                     ),
