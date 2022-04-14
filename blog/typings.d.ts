@@ -45,3 +45,7 @@ export interface Prices {
     image: string;
     price_change_percentage_24h: number;
 }
+
+export interface Url {
+    url: string;
+}
