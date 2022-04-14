@@ -2,13 +2,13 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className='bg-black text-white '>
+        <footer className='bg-black text-white mt-40'>
             <div className='max-w-6xl mx-auto px-4'>
                 <div className='grid justify-center space-y-10 py-10 sm:justify-center sm:flex sm:space-x-44 uppercase'>
                     <img
                         className="w-20 object-contain "
                         src="https://cdn.sanity.io/images/gsl99a2h/production/0cbfe27bf016fd990aa0e58f4861ab70e00d3fc3-2400x1597.jpg"
-                        alt="Logo InfoCoin"
+                        alt="Logo CoinInfo"
                     />
                     <div className='text-sm space-y-2 font-semibold'>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>

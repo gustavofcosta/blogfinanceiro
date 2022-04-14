@@ -1,6 +1,6 @@
 import { sanityClient, urlFor } from "../../sanity"
 import Header from "../../components/Header"
-import { Post } from '../../typings'
+import { Post, Prices } from '../../typings'
 import { GetStaticProps } from "next"
 import PortableText from "react-portable-text"
 import { useForm, SubmitHandler } from "react-hook-form"
@@ -16,9 +16,10 @@ interface IFormInput {
 
 interface Props {
     post: Post;
+    filteredCoins: [Prices]
 }
 
-function Post({ post }: Props) {
+function Post({ post, filteredCoins }: Props) {
     const [submitted, setSubmitted] = useState(false);
 
     const {
@@ -44,7 +45,7 @@ function Post({ post }: Props) {
     return (
         <main>
             <div>
-                <Header />
+                <Header filteredCoins={filteredCoins} />
 
                 <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
 
@@ -54,7 +55,7 @@ function Post({ post }: Props) {
 
                     <div className="flex items-center space-x-2">
                         <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt="" />
-                        <p className="font-extralight text-sm">Blog post by {" "}<span className="text-red-500 ">{post.author.name}</span> - Published at {new Date(post._createdAt).toLocaleString()}</p>
+                        <p className="font-extralight text-sm">Blog post by {" "}<span className="text-red-600 font-semibold">{post.author.name}</span> - Published at {new Date(post._createdAt).toLocaleString()}</p>
                     </div>
 
                     <div className="mt-10 ">
@@ -71,7 +72,7 @@ function Post({ post }: Props) {
                                         <h2 className="text-xl font-bold my-5"
                                             {...props}
                                         />),
-                                     h3: (props: any) => (
+                                    h3: (props: any) => (
                                         <h2 className="text-lg font-bold my-5"
                                             {...props}
                                         />),
@@ -220,6 +221,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         slug: params?.slug,
     });
 
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false')
+
+    const filteredCoins = await res.json()
+
+
+
     if (!post) {
         return {
             notFound: true
@@ -229,6 +236,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             post,
+            filteredCoins,
         },
         revalidate: 60,
     }

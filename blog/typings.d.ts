@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 export interface Post {
     _id: string;
     _createdAt: string;
@@ -34,4 +36,12 @@ export interface Comment {
     _rev: string;
     _type: string;
     _updatedAt: string;
+}
+
+export interface Prices {
+    id: string;
+    symbol: string;
+    name: string;
+    image: string;
+    price_change_percentage_24h: number;
 }
