@@ -29,6 +29,8 @@ class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
+                    <meta charSet='UTF-8' />
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async

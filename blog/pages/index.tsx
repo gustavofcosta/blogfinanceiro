@@ -3,6 +3,7 @@ import { sanityClient, urlFor } from "../sanity"
 import { Post, Prices } from '../typings'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Price from '../components/Price'
 import Link from 'next/link'
 import { BsArrowDownCircle } from 'react-icons/bs'
 // import Image from "next/image"
@@ -17,13 +18,15 @@ interface Props {
 export default function Home({ posts, filteredCoins }: Props) {
   return (
     <div>
+      <Price filteredCoins={filteredCoins} />
       <div className="max-w-7xl mx-auto">
         <Head>
           <title>CoinInfo</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header filteredCoins={filteredCoins} />
+
+        <Header />
 
         <div className='flex justify-between items-center bg-yellow-500  border-y border-black py-10 lg:py-0'>
           <div className="px-10 space-y-5">
@@ -104,7 +107,7 @@ export const getServerSideProps = async () => {
 
   const posts = await sanityClient.fetch(query)
 
-  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false')
+  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=false')
 
   const filteredCoins = await res.json()
 

@@ -6,6 +6,8 @@ import PortableText from "react-portable-text"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useState } from "react"
 import Footer from "../../components/Footer"
+import Price from "../../components/Price"
+import Head from "next/head"
 
 interface IFormInput {
     _id: string;
@@ -45,7 +47,16 @@ function Post({ post, filteredCoins }: Props) {
     return (
         <main>
             <div>
-                <Header filteredCoins={filteredCoins} />
+                <Price filteredCoins={filteredCoins} />
+
+                <Head>
+                    <title>{post.title}</title>
+                    <link rel="icon" href="/favicon.ico" />
+                    <meta name="description" content={post.description} />
+                </Head>
+
+
+                <Header />
 
                 <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
 
@@ -221,7 +232,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         slug: params?.slug,
     });
 
-    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false')
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=false')
 
     const filteredCoins = await res.json()
 
