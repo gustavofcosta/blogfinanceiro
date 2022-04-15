@@ -31,6 +31,9 @@ class MyDocument extends Document {
                 <Head>
                     <meta charSet='UTF-8' />
                     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link rel="apple-touch-icon" href="/example.png" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
