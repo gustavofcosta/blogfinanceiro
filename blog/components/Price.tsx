@@ -15,27 +15,27 @@ export default function Price({ filteredCoins }: Props) {
     let itensShow = 9
 
     if (width < 1200) {
-        itensShow = 7
+        itensShow = 8
     }
 
     if (width < 920) {
-        itensShow = 6
+        itensShow = 7
     }
 
     if (width < 870) {
-        itensShow = 5
+        itensShow = 6
     }
 
     if (width < 730) {
-        itensShow = 4
+        itensShow = 5
     }
 
     if (width < 644) {
-        itensShow = 3
+        itensShow = 4
     }
 
     if (width < 520) {
-        itensShow = 2
+        itensShow = 3
     }
 
 

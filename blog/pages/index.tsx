@@ -75,7 +75,7 @@ export default function Home({ posts, filteredCoins }: Props) {
         </div>
 
         {/* 4 ultimas NEWS */}
-        <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Notícias</h1>
+        <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Últimas Notícias</h1>
         <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
           <Carousel
             isRTL={false}
@@ -104,7 +104,7 @@ export default function Home({ posts, filteredCoins }: Props) {
         </div>
 
         {/* All */}
-        <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Ultimos Postados</h1>
+        <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>últimas Postagens</h1>
         <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
           <div
             className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-5 p-4 md:p-5 '>
