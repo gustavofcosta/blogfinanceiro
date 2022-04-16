@@ -14,3 +14,13 @@ body::-webkit-scrollbar {
     background-color: orange;    /* color of the scroll thumb */
     border-radius: 5px;       /* roundness of the scroll thumb */
   }
+
+  button.rec-dot{
+    background-color: white;
+    box-shadow: 0 0 1px 3px rgb(74, 71, 71);
+  }
+  
+  button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+    box-shadow: 0 0 1px 3px orange;
+  }
+  

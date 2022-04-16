@@ -22,7 +22,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
