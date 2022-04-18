@@ -22,6 +22,29 @@ export interface Post {
     body: [object];
 }
 
+export interface Noticia {
+    _id: string;
+    _createdAt: string;
+    title: string;
+    author: {
+        name: string;
+        image: string;
+    };
+    comments: Comment[];
+    description: string;
+    mainImage: {
+        asset: {
+            url: string;
+        };
+    };
+    video: string;
+    slugnews: {
+        current: string;
+    };
+    body: [object];
+}
+
+
 export interface Comment {
     approved: boolean;
     comment: string;
