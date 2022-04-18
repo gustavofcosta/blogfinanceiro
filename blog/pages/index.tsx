@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { BsArrowDownCircle } from 'react-icons/bs'
 // import Image from "next/image"
 import Carousel from 'react-elastic-carousel'
+import useWindowDimensions from '../components/UserWindow'
 
 
 interface Props {
@@ -18,6 +19,13 @@ interface Props {
 
 export default function Home({ posts, filteredCoins, noticias }: Props) {
 
+  const { width } = useWindowDimensions()
+
+  let itensShow = 2
+
+  if (width < 870) {
+    itensShow = 1
+  }
 
 
   return (
@@ -47,16 +55,17 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
 
         {/* 4 ultimas NEWS */}
         {/* <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>4 Notícias</h1> */}
-        <div className='mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
+        <div className='mt-5 flex flex-col justify-center items-center px-1'>
           <Carousel
             isRTL={false}
             pagination={true}
-            itemsToShow={1}
+            itemsToShow={itensShow}
+            itemPadding={[0, 40]}
             enableAutoPlay={true}
             autoPlaySpeed={6000}
             transitionMs={3000}
             showArrows={false}
-            className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5  p-4 md:gap-6 md:p-6'>
+            className='flex justify-center items-center'>
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden gap-4'>
@@ -79,7 +88,7 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
         <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Últimas Notícias</h1>
         <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
           <div
-            className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-5 p-4 md:p-5 '>
+            className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-5 p-4 md:p-5 '>
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
