@@ -66,7 +66,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
 
         {/* 4 ultimas NEWS */}
         {/* <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>4 Notícias</h1> */}
-        <div className='mt-5 flex flex-col justify-center items-center px-1'>
+        <div className='mt-20 flex flex-col justify-center items-center px-1'>
           <Carousel
             isRTL={false}
             pagination={true}
