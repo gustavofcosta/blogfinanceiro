@@ -8,6 +8,8 @@ import { useState } from "react"
 import Footer from "../../components/Footer"
 import Price from "../../components/Price"
 import Head from "next/head"
+import { NextSeo } from "next-seo"
+
 
 interface IFormInput {
     _id: string;
@@ -19,9 +21,10 @@ interface IFormInput {
 interface Props {
     post: Post;
     filteredCoins: [Prices]
+    title: string
 }
 
-function Post({ post, filteredCoins }: Props) {
+function Post({ post, filteredCoins, title }: Props) {
     const [submitted, setSubmitted] = useState(false);
 
     const {
@@ -44,9 +47,24 @@ function Post({ post, filteredCoins }: Props) {
         })
     }
 
+    const url = `https://coininfo.com.br/noticia/${post.slug.current}`
+
+
     return (
         <main>
             <div>
+
+                <NextSeo
+                    title={post.title}
+                    description={post.description}
+                    canonical={url}
+                    openGraph={{
+                        url,
+                        title,
+                        type: 'article'
+                    }}
+                />
+
                 <Price filteredCoins={filteredCoins} />
 
                 <Head>
@@ -58,15 +76,15 @@ function Post({ post, filteredCoins }: Props) {
 
                 <Header />
 
-                <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
+                <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title} />
 
                 <article className="max-w-3xl mx-auto p-5">
                     <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
                     <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
 
                     <div className="flex items-center space-x-2">
-                        <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt="" />
-                        <p className="font-extralight text-sm">Blog post by {" "}<span className="text-red-600 font-semibold">{post.author.name}</span> - Published at {new Date(post._createdAt).toLocaleString()}</p>
+                        <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt={post.author.name} />
+                        <p className="font-extralight text-sm">Publicado por {" "}<span className="text-red-500 font-semibold">{post.author.name}</span> - Publicado em {new Date(post._createdAt).toLocaleString()}</p>
                     </div>
 
                     <div className="mt-10 ">
@@ -116,8 +134,8 @@ function Post({ post, filteredCoins }: Props) {
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-                        <h3 className="text-sm text-yellow-500">Enjoyed this article</h3>
-                        <h4 className="text-3xl font-bold">Leave a comment below!</h4>
+                        <h3 className="text-sm text-yellow-500">Gostou do artigo?</h3>
+                        <h4 className="text-3xl font-bold">Deixe um comentário abaixo!</h4>
                         <hr className="py-3 mt-2" />
 
                         <input
@@ -140,7 +158,7 @@ function Post({ post, filteredCoins }: Props) {
                                 className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" placeholder="Seu Email" type="email" />
                         </label>
                         <label className="block mb-5">
-                            <span className="text-gray-700" >Comment</span>
+                            <span className="text-gray-700" >Comentário</span>
                             <textarea
                                 {...register("comment", { required: true })}
                                 className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" placeholder="Seu comentário" rows={8} />
@@ -149,13 +167,13 @@ function Post({ post, filteredCoins }: Props) {
                         {/* Erro de Validação */}
                         <div className=" flex flex-col p-5">
                             {errors.name && (
-                                <span className="text-red-500"> - O campo nome é obrigatório</span>
+                                <span className="text-red-600"> - O campo nome é obrigatório</span>
                             )}
                             {errors.comment && (
-                                <span className="text-red-500"> - O campo comentário é obrigatório</span>
+                                <span className="text-red-600"> - O campo comentário é obrigatório</span>
                             )}
                             {errors.email && (
-                                <span className="text-red-500"> - O campo Email é obrigatório</span>
+                                <span className="text-red-600"> - O campo Email é obrigatório</span>
                             )}
                         </div>
 
@@ -166,7 +184,7 @@ function Post({ post, filteredCoins }: Props) {
 
                 {/* Comments */}
                 <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
-                    <h3 className="text-4xl">Comments</h3>
+                    <h3 className="text-4xl">Comentário</h3>
                     <hr className="pb-2" />
 
                     {post.comments.map((comment) => (

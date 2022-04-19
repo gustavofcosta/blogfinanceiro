@@ -3,6 +3,9 @@ import { useEffect } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import * as ga from "../lib/ga";
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo-config'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -24,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
   )

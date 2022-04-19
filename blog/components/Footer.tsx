@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 
+
 function Footer() {
     return (
         <footer className='bg-[#0c0c0c] text-white mt-40'>
@@ -10,6 +11,7 @@ function Footer() {
                         className="w-20 object-contain "
                         src="https://cdn.sanity.io/images/gsl99a2h/production/0cbfe27bf016fd990aa0e58f4861ab70e00d3fc3-2400x1597.jpg"
                         alt="Logo CoinInfo"
+
                     />
                     <div className='text-sm space-y-2 font-semibold'>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>

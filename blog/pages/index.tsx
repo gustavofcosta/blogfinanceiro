@@ -6,18 +6,21 @@ import Footer from '../components/Footer'
 import Price from '../components/Price'
 import Link from 'next/link'
 import { BsArrowDownCircle } from 'react-icons/bs'
-// import Image from "next/image"
 import Carousel from 'react-elastic-carousel'
 import useWindowDimensions from '../components/UserWindow'
+import { NextSeo } from 'next-seo'
+
 
 
 interface Props {
   posts: [Post]
   filteredCoins: [Prices]
   noticias: [Noticia]
+  title: string
+  url: string
 }
 
-export default function Home({ posts, filteredCoins, noticias }: Props) {
+export default function Home({ posts, filteredCoins, noticias, title, url }: Props) {
 
   const { width } = useWindowDimensions()
 
@@ -30,13 +33,21 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
 
   return (
     <div>
-      <Price filteredCoins={filteredCoins} />
-      <div className="max-w-7xl mx-auto">
-        <Head>
-          <title>CoinInfo</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
 
+      <NextSeo
+        title='CoinInfo: Bitcoin, Ethereum, Investimento e Notícias sobre Criptomoedas e Preços'
+        description='Notícia, Educacional sobre Biticoin, Ethereum, blockchain, DeFi, Finanças digitais e notícias da Web 3.0.'
+        canonical='https://coininfo.com.br'
+        openGraph={{
+          url,
+          title,
+        }}
+      />
+
+
+      <Price filteredCoins={filteredCoins} />
+
+      <div className="max-w-7xl mx-auto">
 
         <Header />
 
@@ -69,13 +80,13 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden gap-4'>
-                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt="" />
+                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt={noticia.title} />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-lg font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} by {noticia.author.name}</p>
                     </div>
-                    <img className='h-12 w-12 rounded-full' src={urlFor(noticia.author.image).url()!} alt="" />
+                    <img className='h-12 w-12 rounded-full' src={urlFor(noticia.author.image).url()!} alt={noticia.author.name} />
                   </div>
                 </div>
               </Link>
@@ -92,19 +103,19 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <img className='h-24 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt="" />
+                  <img className='h-24 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt={noticia.title} />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-base font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} by {noticia.author.name}</p>
                     </div>
-                    <img className='h-9 w-9 rounded-full' src={urlFor(noticia.author.image).url()!} alt="" />
+                    <img className='h-9 w-9 rounded-full' src={urlFor(noticia.author.image).url()!} alt={noticia.author.name} />
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-          <button className='animate-bounce text-3xl py-6'><BsArrowDownCircle /></button>
+          <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button>
         </div>
 
 
@@ -116,19 +127,19 @@ export default function Home({ posts, filteredCoins, noticias }: Props) {
             {posts.map((post) => (
               <Link key={post._id} href={`/post/${post.slug.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
+                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt={post.title} />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-lg font-bold'>{post.title}</p>
                       <p className='text-xs'>{post.description} by {post.author.name}</p>
                     </div>
-                    <img className='h-12 w-12 rounded-full' src={urlFor(post.author.image).url()!} alt="" />
+                    <img className='h-12 w-12 rounded-full' src={urlFor(post.author.image).url()!} alt={post.author.name} />
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-          <button className='animate-bounce text-3xl py-6'><BsArrowDownCircle /></button>
+          <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button>
         </div>
       </div>
       <Footer />

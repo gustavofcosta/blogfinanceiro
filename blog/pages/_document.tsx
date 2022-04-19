@@ -29,11 +29,13 @@ class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
-                    <meta charSet='UTF-8' />
-                    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+                    <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <link rel="apple-touch-icon" href="/example.png" />
+                    <link rel="manifest" href="manifest.json" />
+                    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+                    <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
