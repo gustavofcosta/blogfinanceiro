@@ -9,6 +9,7 @@ import Footer from "../../components/Footer"
 import Price from "../../components/Price"
 import Head from "next/head"
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 
 interface IFormInput {
@@ -76,14 +77,26 @@ function Noticia({ noticia, filteredCoins, title }: Props) {
 
                 <Header />
 
-                <img className="w-full h-40 object-cover" src={urlFor(noticia.mainImage).url()!} alt={noticia.title} />
+                 <Image  
+                    src={urlFor(noticia.mainImage).url()!} 
+                    alt={noticia.title} 
+                    className="object-cover"
+                    width={1920}
+                    height={160}
+                />
 
                 <article className="max-w-3xl mx-auto p-5">
                     <h1 className="text-3xl mt-10 mb-3">{noticia.title}</h1>
                     <h2 className="text-xl font-light text-gray-500">{noticia.description}</h2>
 
                     <div className="flex items-center space-x-2">
-                        <img className="h-10 w-10 rounded-full" src={urlFor(noticia.author.image).url()!} alt={noticia.author.name} />
+                         <Image 
+                            className="rounded-full" 
+                            src={urlFor(noticia.author.image).url()!} 
+                            alt={noticia.author.name}
+                            width={40}
+                            height={40}
+                        />
                         <p className="font-extralight text-sm">Publicado por {" "}<span className="text-red-500 font-semibold">{noticia.author.name}</span> - Publicado em {new Date(noticia._createdAt).toLocaleString()}</p>
                     </div>
 
