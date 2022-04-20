@@ -166,7 +166,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                     </div>
                     <div  className='h-12 w-12 rounded-full'>
                       <Image 
-                        src={urlFor(noticia.author.image).url()!} 
+                        src={urlFor(post.author.image).url()!} 
                         alt={noticia.author.name}
                         layout="responsive"
                        />
