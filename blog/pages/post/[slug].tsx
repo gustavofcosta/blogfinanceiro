@@ -3,6 +3,8 @@ import Header from "../../components/Header"
 import { Post, Prices } from '../../typings'
 import { GetStaticProps } from "next"
 import PortableText from "react-portable-text"
+import BlockContent from "@sanity/block-content-to-react"
+
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useState } from "react"
 import Footer from "../../components/Footer"
@@ -88,10 +90,10 @@ function Post({ post, filteredCoins, title }: Props) {
                     </div>
 
                     <div className="mt-10 ">
-                        <PortableText
+                        <BlockContent
                             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
                             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-                            content={post.body}
+                            blocks={post.body}
                             serializers={
                                 {
                                     h1: (props: any) => (
