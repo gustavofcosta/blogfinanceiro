@@ -1,7 +1,7 @@
 import { Prices } from '../typings'
 import Carousel from 'react-elastic-carousel'
 import useWindowDimensions from './UserWindow'
-
+import Image from "next/image"
 
 interface Props {
     filteredCoins: [Prices]
@@ -55,7 +55,11 @@ export default function Price({ filteredCoins }: Props) {
                 <div className="flex font-bold flex-col justify-center items-center space-y-1"
                     key={coin.id}>
                     <div className="flex justify-center items-center  pt-2">
-                        <img className="h-4 w-4 mr-2" src={coin.image} alt={coin.name} />
+                        <Image 
+                            className="mr-2" src={coin.image} alt={coin.name} 
+                            width={16}
+                            height={16}    
+                        />
                         <p className="text-white uppercase">{coin.symbol}</p>
                     </div>
 
