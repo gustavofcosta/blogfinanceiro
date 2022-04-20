@@ -77,14 +77,16 @@ function Post({ post, filteredCoins, title }: Props) {
 
                 <Header />
                 
-             
-                <Image  
-                    src={urlFor(post.mainImage).url()!} 
-                    alt={post.title} 
-                    className="w-full object-cover"
-                    width={160}
-                    height={160}
-                />
+                <div className="w-full">
+                    <Image  
+                        src={urlFor(post.mainImage).url()!} 
+                        alt={post.title} 
+                        className="w-full object-cover"
+                        width={160}
+                        height={160}
+                    />
+                </div>
+
              
 
                 <article className="max-w-3xl mx-auto p-5">
