@@ -81,7 +81,7 @@ function Post({ post, filteredCoins, title }: Props) {
                     src={urlFor(post.mainImage).url()!} 
                     alt={post.title} 
                     className="object-cover"
-                    width={2048}
+                    width={3840}
                     height={160}
                 />                
                 
@@ -94,7 +94,13 @@ function Post({ post, filteredCoins, title }: Props) {
                     <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
 
                     <div className="flex items-center space-x-2">
-                        <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt={post.author.name} />
+                        <Image 
+                            className="rounded-full" 
+                            src={urlFor(post.author.image).url()!} 
+                            alt={post.author.name}
+                            width={40}
+                            height={40}
+                        />
                         <p className="font-extralight text-sm">Publicado por {" "}<span className="text-red-500 font-semibold">{post.author.name}</span> - Publicado em {new Date(post._createdAt).toLocaleString()}</p>
                     </div>
 
