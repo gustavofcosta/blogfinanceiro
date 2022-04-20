@@ -94,11 +94,10 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
                     <img 
-                      className='rounded-full' 
+                      className='h-10 w-full rounded-full' 
                       src={urlFor(noticia.author.image).url()!} 
                       alt={noticia.author.name}
-                      width={40}
-                      height={40}
+                      
                      />
                   </div>
                 </div>
@@ -128,12 +127,11 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-base font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
-                    <Image 
-                      className='rounded-full' 
+                    <img 
+                      className='h-10 w-full rounded-full' 
                       src={urlFor(noticia.author.image).url()!} 
                       alt={noticia.author.name} 
-                      width={40}
-                      height={40}
+                      
                      />
                   </div>
                 </div>
@@ -165,11 +163,10 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-xs'>{post.description} por {post.author.name}</p>
                     </div>
                     <Image 
-                      className='rounded-full' 
+                      className='h-10 w-full rounded-full' 
                       src={urlFor(post.author.image).url()!} 
                       alt={post.author.name} 
-                      width={40}
-                      height={40}
+                      
                      />
                   </div>
                 </div>
