@@ -97,7 +97,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <Image 
                         src={urlFor(noticia.author.image).url()!} 
                         alt={noticia.author.name}
-                        layout="responsive
+                        layout="responsive"
                        />
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <Image 
                         src={urlFor(noticia.author.image).url()!} 
                         alt={noticia.author.name}
-                        layout="responsive
+                        layout="responsive"
                        />
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <Image 
                         src={urlFor(noticia.author.image).url()!} 
                         alt={noticia.author.name}
-                        layout="responsive
+                        layout="responsive"
                        />
                     </div>
                   </div>
