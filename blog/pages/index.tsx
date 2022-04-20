@@ -85,8 +85,8 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                     className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
                     src={urlFor(noticia.mainImage).url()!} 
                     alt={noticia.title}
-                    width={240}
-                    height={300}
+                    width={1920}
+                    height={240}
                   />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
