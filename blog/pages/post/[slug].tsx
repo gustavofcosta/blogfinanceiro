@@ -9,6 +9,7 @@ import Footer from "../../components/Footer"
 import Price from "../../components/Price"
 import Head from "next/head"
 import { NextSeo } from "next-seo"
+import Image from "next/image"
 
 
 interface IFormInput {
@@ -76,7 +77,10 @@ function Post({ post, filteredCoins, title }: Props) {
 
                 <Header />
 
-                <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt={post.title} />
+                <Image className="w-full object-cover" src={urlFor(post.mainImage).url()!} alt={post.title} 
+                    width={160}
+                    height={160}
+                />
 
                 <article className="max-w-3xl mx-auto p-5">
                     <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
