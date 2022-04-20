@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
+import Image from 'next/image'
 
 
 function Footer() {
@@ -7,11 +8,12 @@ function Footer() {
         <footer className='bg-[#0c0c0c] text-white mt-40'>
             <div className='max-w-6xl mx-auto px-4'>
                 <div className='grid items-center justify-center grid-cols-2  p-8 ml-8 sm:grid-cols-2 sm:h-72 lg:grid-cols-4 gap-10 md:gap-6 lg:h-44 sm:ml-44 md:p-6 uppercase'>
-                    <img
-                        className="w-20 object-contain "
+                    <Image
+                        className="object-contain "
                         src="https://cdn.sanity.io/images/gsl99a2h/production/0cbfe27bf016fd990aa0e58f4861ab70e00d3fc3-2400x1597.jpg"
                         alt="Logo CoinInfo"
-
+                        width={80}
+                        height={80}
                     />
                     <div className='text-sm space-y-2 font-semibold'>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>
