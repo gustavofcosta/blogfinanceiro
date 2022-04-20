@@ -94,11 +94,11 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
                      
-                      <img
-                        className='h-12 w-12 rounded-full'>
-                        src={urlFor(noticia.author.image).url()!} 
-                        alt={noticia.author.name}                    
-                       />
+                    <img
+                      className='h-12 w-12 rounded-full'>
+                      src={urlFor(noticia.author.image).url()!} 
+                      alt={noticia.author.name}                    
+                    />
                    
                   </div>
                 </div>
@@ -122,18 +122,18 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                     alt={noticia.title} 
                     width={214}
                     height={96}
-                    />
+                  />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-base font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
                    
-                      <img
-                        className='h-12 w-12 rounded-full'
-                        src={urlFor(noticia.author.image).url()!} 
-                        alt={noticia.author.name}                     
-                       />
+                    <img
+                      className='h-12 w-12 rounded-full'
+                      src={urlFor(noticia.author.image).url()!} 
+                      alt={noticia.author.name}                     
+                    />
                    
                   </div>
                 </div>
@@ -165,11 +165,11 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-xs'>{post.description} por {post.author.name}</p>
                     </div>
                
-                      <img
-                        className='h-12 w-12 rounded-full'
-                        src={urlFor(post.author.image).url()!} 
-                        alt={post.author.name}
-                       />
+                    <img
+                      className='h-12 w-12 rounded-full'
+                      src={urlFor(post.author.image).url()!} 
+                      alt={post.author.name}
+                    />
              
                   </div>
                 </div>
