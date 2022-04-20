@@ -9,6 +9,7 @@ import { BsArrowDownCircle } from 'react-icons/bs'
 import Carousel from 'react-elastic-carousel'
 import useWindowDimensions from '../components/UserWindow'
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 
 
@@ -80,7 +81,13 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden gap-4'>
-                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt={noticia.title} />
+                  <Image 
+                    className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
+                    src={urlFor(noticia.mainImage).url()!} 
+                    alt={noticia.title}
+                    width={240}
+                    height={300}
+                  />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-lg font-bold'>{noticia.title}</p>
