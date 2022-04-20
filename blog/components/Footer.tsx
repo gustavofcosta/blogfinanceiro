@@ -14,7 +14,6 @@ function Footer() {
                         alt="Logo CoinInfo"
                         width={80}
                         height={80}
-                        layout="fill"
                     />
                     <div className='text-sm space-y-2 font-semibold'>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>
