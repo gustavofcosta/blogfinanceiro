@@ -81,7 +81,7 @@ function Post({ post, filteredCoins, title }: Props) {
                     src={urlFor(post.mainImage).url()!} 
                     alt={post.title} 
                     className="object-cover"
-                    width={3840}
+                    width={1920}
                     height={160}
                 />                
                 
