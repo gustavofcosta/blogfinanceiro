@@ -82,7 +82,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden gap-4'>
                   <Image 
-                    className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
                     src={urlFor(noticia.mainImage).url()!} 
                     alt={noticia.title}
                     width={580}
@@ -93,7 +93,12 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                       <p className='text-lg font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
-                    <img className='h-12 w-12 rounded-full' src={urlFor(noticia.author.image).url()!} alt={noticia.author.name} />
+                    <Image 
+                      className='rounded-full' 
+                      src={urlFor(noticia.author.image).url()!} 
+                      alt={noticia.author.name} />
+                      width={48}
+                      height={48}
                   </div>
                 </div>
               </Link>
@@ -110,13 +115,25 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <img className='h-24 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(noticia.mainImage).url()!} alt={noticia.title} />
+                  <Image 
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
+                    src={urlFor(noticia.mainImage).url()!} 
+                    alt={noticia.title} 
+                    width={214}
+                    height={96}
+                    />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-base font-bold'>{noticia.title}</p>
                       <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
                     </div>
-                    <img className='h-9 w-9 rounded-full' src={urlFor(noticia.author.image).url()!} alt={noticia.author.name} />
+                    <Image 
+                      className='rounded-full' 
+                      src={urlFor(noticia.author.image).url()!} 
+                      alt={noticia.author.name} 
+                      width={36}
+                      height={36}
+                      />
                   </div>
                 </div>
               </Link>
@@ -134,13 +151,25 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
             {posts.map((post) => (
               <Link key={post._id} href={`/post/${post.slug.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt={post.title} />
+                  <Image 
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
+                    src={urlFor(post.mainImage).url()!} 
+                    alt={post.title} 
+                    width={366}
+                    height={240}
+                    />
                   <div className='flex justify-between p-5 bg-white'>
                     <div>
                       <p className='text-lg font-bold'>{post.title}</p>
                       <p className='text-xs'>{post.description} por {post.author.name}</p>
                     </div>
-                    <img className='h-12 w-12 rounded-full' src={urlFor(post.author.image).url()!} alt={post.author.name} />
+                    <Image 
+                      className='rounded-full' 
+                      src={urlFor(post.author.image).url()!} 
+                      alt={post.author.name} 
+                      width={48}
+                      height={48}
+                      />
                   </div>
                 </div>
               </Link>
