@@ -5,6 +5,10 @@ module.exports = {
 
 module.exports = {
  images: {
-   domains: ['assets.coingecko.com'],
+   domains: 
+   [
+      'assets.coingecko.com',
+      'cdn.sanity.io'       
+   ],
  },
 }
