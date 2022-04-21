@@ -11,7 +11,6 @@ import Head from "next/head"
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 
-
 interface IFormInput {
     _id: string;
     name: string;
@@ -77,56 +76,57 @@ function Noticia({ noticia, filteredCoins, title }: Props) {
 
                 <Header />
 
-                 <Image  
-                    src={urlFor(noticia.mainImage).url()!} 
-                    alt={noticia.title} 
+                <Image
+                    src={urlFor(noticia.mainImage).url()!}
+                    alt={noticia.title}
                     className="object-cover"
                     width={1920}
-                    height={160}
+                    height={200}
                 />
 
                 <article className="max-w-3xl mx-auto p-5">
                     <h1 className="text-3xl mt-10 mb-3">{noticia.title}</h1>
-                    <h2 className="text-xl font-light text-gray-500">{noticia.description}</h2>
+                    <h2 className="text-base font-light text-gray-500">{noticia.description}</h2>
 
                     <div className="flex items-center space-x-2">
-                         <Image 
-                            className="rounded-full" 
-                            src={urlFor(noticia.author.image).url()!} 
+                        <Image
+                            className="rounded-full"
+                            src={urlFor(noticia.author.image).url()!}
                             alt={noticia.author.name}
                             width={40}
                             height={40}
                         />
-                        <p className="font-extralight text-sm">Publicado por {" "}<span className="text-red-500 font-semibold">{noticia.author.name}</span> - Publicado em {new Date(noticia._createdAt).toLocaleString()}</p>
+                        <p className="font-extralight text-base">Publicado por {" "}<span className="text-red-500 font-semibold">{noticia.author.name}</span> - {new Date(noticia._createdAt).toLocaleString()}</p>
                     </div>
 
                     <div className="mt-10 ">
                         <PortableText
+                            className=""
                             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
                             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
                             content={noticia.body}
                             serializers={
                                 {
                                     h1: (props: any) => (
-                                        <h1 className="text-2xl font-bold my-5"
+                                        <h1 className="text-3xl font-bold my-5"
                                             {...props} />),
                                     h2: (props: any) => (
-                                        <h2 className="text-xl font-bold my-5"
+                                        <h2 className="text-2xl font-bold my-5"
                                             {...props}
                                         />),
                                     h3: (props: any) => (
-                                        <h2 className="text-lg font-bold my-5"
+                                        <h2 className="text-xl font-bold my-5"
                                             {...props}
                                         />),
-                                    p: (props: any) => (
-                                        <p className="text-base"
+                                    normal: (props: any) => (
+                                        <p className="text-lg my-5"
                                             {...props}
                                         />),
-                                    li: ({ Children }: any) => (
-                                        <li className="ml-4 list-disc">{Children}</li>
+                                    li: ({ children }: any) => (
+                                        <li className="ml-8 my-5 list-disc text-lg">{children}</li>
                                     ),
-                                    link: ({ href, Children }: any) => (
-                                        <a href={href} className="text-blue-500 hover:underline">{Children}</a>
+                                    link: ({ href, children }: any) => (
+                                        <a href={href} className="text-blue-500 hover:underline text-base">{children}</a>
                                     ),
                                 }
                             }

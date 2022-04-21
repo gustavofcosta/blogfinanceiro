@@ -4,11 +4,11 @@ module.exports = {
 }
 
 module.exports = {
- images: {
-   domains: 
-   [
-      'assets.coingecko.com',
-      'cdn.sanity.io'       
-   ],
- },
+  images: {
+    domains:
+      [
+        'assets.coingecko.com',
+        'cdn.sanity.io',
+      ],
+  },
 }

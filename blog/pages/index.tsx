@@ -6,10 +6,11 @@ import Footer from '../components/Footer'
 import Price from '../components/Price'
 import Link from 'next/link'
 import { BsArrowDownCircle } from 'react-icons/bs'
-import Carousel from 'react-elastic-carousel'
+// import Carousel from 'react-elastic-carousel'
 import useWindowDimensions from '../components/UserWindow'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+// import { useCallback, useState } from 'react'
 
 
 
@@ -30,7 +31,6 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
   if (width < 870) {
     itensShow = 1
   }
-
 
   return (
     <div>
@@ -60,14 +60,16 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
             </h2>
           </div>
 
-          <img className="hidden md:inline-flex h-32 lg:h-96"
-            src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png" alt="logo letra Ic" />
+          <img
+            className="hidden md:inline-flex h-32 lg:h-96"
+            src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png" alt="logo letra Ic"
+          />
 
         </div>
 
         {/* 4 ultimas NEWS */}
         {/* <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>4 Notícias</h1> */}
-        <div className='mt-20 flex flex-col justify-center items-center px-1'>
+        {/* <div className='mt-20 flex flex-col justify-center items-center px-1'>
           <Carousel
             isRTL={false}
             pagination={true}
@@ -81,62 +83,48 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden gap-4'>
-                  <Image 
-                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
-                    src={urlFor(noticia.mainImage).url()!} 
+                  <Image
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
+                    src={urlFor(noticia.mainImage).url()!}
                     alt={noticia.title}
                     width={580}
                     height={240}
                   />
-                  <div className='flex justify-between p-5 bg-white'>
+                  <div className='flex justify-between p-3 bg-white'>
                     <div>
                       <p className='text-lg font-bold'>{noticia.title}</p>
-                      <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
+                      <p className='text-xs'>{noticia.description}</p>
                     </div>
-                     
-                    <img
-                      className='h-12 w-12 rounded-full'
-                      src={urlFor(noticia.author.image).url()!} 
-                      alt={noticia.author.name}
-                     
-                    />
-                   
+
                   </div>
                 </div>
               </Link>
             ))}
           </Carousel>
-          {/* <button className='animate-bounce text-3xl py-6'><BsArrowDownCircle /></button> */}
-        </div>
+          <button className='animate-bounce text-3xl py-6'><BsArrowDownCircle /></button>
+        </div> */}
 
         {/* All */}
         <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Últimas Notícias</h1>
         <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
           <div
-            className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-5 p-4 md:p-5 '>
+            className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 p-4 md:p-6 '>
             {noticias.map((noticia) => (
               <Link key={noticia._id} href={`/noticia/${noticia.slugnews.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <Image 
-                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
-                    src={urlFor(noticia.mainImage).url()!} 
-                    alt={noticia.title} 
-                    width={214}
-                    height={96}
+                  <Image
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
+                    src={urlFor(noticia.mainImage).url()!}
+                    alt={noticia.title}
+                    width={580}
+                    height={240}
                   />
-                  <div className='flex justify-between p-5 bg-white'>
+                  <div className='flex justify-between p-3 bg-white'>
                     <div>
-                      <p className='text-base font-bold'>{noticia.title}</p>
-                      <p className='text-xs'>{noticia.description} por {noticia.author.name}</p>
+                      <p className='text-xl font-bold'>{noticia.title}</p>
+                      <p className='text-base'>{noticia.description}... {new Date(noticia._createdAt).toLocaleString()}</p>
                     </div>
-                   
-                    <img
-                      className='h-12 w-12 rounded-full'
-                      src={urlFor(noticia.author.image).url()!} 
-                      alt={noticia.author.name}
-                      
-                    />
-                   
+
                   </div>
                 </div>
               </Link>
@@ -145,35 +133,27 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
           <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button>
         </div>
 
-
         {/* Educacional */}
         <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Educacional</h1>
         <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
+
           <div
             className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 p-4 md:p-6 '>
             {posts.map((post) => (
               <Link key={post._id} href={`/post/${post.slug.current}`}>
                 <div className='border rounded-lg group cursor-pointer overflow-hidden'>
-                  <Image 
-                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' 
-                    src={urlFor(post.mainImage).url()!} 
-                    alt={post.title} 
-                    width={366}
+                  <Image
+                    className='object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
+                    src={urlFor(post.mainImage).url()!}
+                    alt={post.title}
+                    width={580}
                     height={240}
-                    />
-                  <div className='flex justify-between p-5 bg-white'>
+                  />
+                  <div className='flex justify-between p-3 bg-white'>
                     <div>
-                      <p className='text-lg font-bold'>{post.title}</p>
-                      <p className='text-xs'>{post.description} por {post.author.name}</p>
-                    </div>
-               
-                    <img
-                      className='h-12 w-12 rounded-full'
-                      src={urlFor(post.author.image).url()!} 
-                      alt={post.author.name}
-                      
-                    />
-             
+                      <p className='text-xl font-bold'>{post.title}</p>
+                      <p className='text-base'>{post.description}...  {new Date(post._createdAt).toLocaleString()}</p>                    </div>
+
                   </div>
                 </div>
               </Link>
@@ -192,6 +172,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
 export const getServerSideProps = async () => {
   const query = `*[_type == "post"] {
     _id,
+    _createdAt,
     title,
     author-> {
       name,
@@ -205,6 +186,7 @@ export const getServerSideProps = async () => {
 
   const querynews = `*[_type == "noticia"] {
     _id,
+    _createdAt,
     title,
     author-> {
       name,

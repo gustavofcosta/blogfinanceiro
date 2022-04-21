@@ -42,6 +42,7 @@ export interface Noticia {
         current: string;
     };
     body: [object];
+    publishedAt: [object]
 }
 
 

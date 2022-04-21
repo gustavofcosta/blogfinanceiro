@@ -1,6 +1,6 @@
 export default {
     name: 'noticia',
-    title: 'Notícia',
+    title: 'Noticia',
     type: 'document',
     fields: [
         {

@@ -54,25 +54,25 @@ export default function Price({ filteredCoins }: Props) {
             {filteredCoins.map((coin) => (
                 <div className="flex font-bold flex-col justify-center items-center space-y-1"
                     key={coin.id}>
-                    <div className="flex justify-center items-center  pt-2">
-                        <Image 
-                            className="mr-2" src={coin.image} alt={coin.name} 
-                            width={16}
-                            height={16}    
+                    <div className="flex justify-center items-center pt-2 gap-2 text-xs">
+                        <Image
+                            src={coin.image} alt={coin.name}
+                            width={18}
+                            height={18}
                         />
                         <p className="text-white uppercase">{coin.symbol}</p>
                     </div>
 
-                    <div className="flex justify-center items-center ">
+                    <div className="flex justify-center items-center text-xs">
                         {coin.price_change_percentage_24h < 0 ? (
                             <>
-                                <p className="text-red-500  mr-2">R$ {coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                                <p className="text-red-500  mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
                                 <p className="text-red-500">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                             </>
 
                         ) : (
                             <>
-                                <p className="text-green-500  mr-2">R$ {coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                                <p className="text-green-500  mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
                                 <p className="text-green-500">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                             </>
                         )}
