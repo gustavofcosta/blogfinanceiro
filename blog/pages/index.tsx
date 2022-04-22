@@ -122,7 +122,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                   <div className='flex justify-between p-3 bg-white'>
                     <div>
                       <p className='text-xl font-bold'>{noticia.title}</p>
-                      <p className='text-base'>{noticia.description}... {new Date(noticia._createdAt).toLocaleString()}</p>
+                      <p className='text-base'>{noticia.description}...</p>
                     </div>
 
                   </div>
@@ -152,7 +152,8 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
                   <div className='flex justify-between p-3 bg-white'>
                     <div>
                       <p className='text-xl font-bold'>{post.title}</p>
-                      <p className='text-base'>{post.description}...  {new Date(post._createdAt).toLocaleString()}</p>                    </div>
+                      <p className='text-base'>{post.description}...</p>                    
+                    </div>
 
                   </div>
                 </div>
