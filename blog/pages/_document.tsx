@@ -29,6 +29,7 @@ class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
+                    <link rel="shortcut icon" href="http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fgsl99a2h%2Fproduction%2F0b459e66fc8b3cb19949739f291081297c5a878b-4501x4500.jpg&w=48&q=75" type="image/x-icon" />
                     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

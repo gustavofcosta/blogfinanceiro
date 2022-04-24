@@ -1,34 +1,52 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 function Footer() {
     return (
         <footer className='bg-[#0c0c0c] text-white mt-40'>
             <div className='max-w-6xl mx-auto px-4'>
-                <div className='grid items-center justify-center grid-cols-2  p-8 ml-8 sm:grid-cols-2 sm:h-72 lg:grid-cols-4 gap-10 md:gap-6 lg:h-44 sm:ml-44 md:p-6 uppercase'>
+                <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-2 sm:h-72 lg:grid-cols-3 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
                     <Image
-                        className="object-contain "
-                        src="https://cdn.sanity.io/images/gsl99a2h/production/0cbfe27bf016fd990aa0e58f4861ab70e00d3fc3-2400x1597.jpg"
+                        className="object-contain"
+                        src="https://cdn.sanity.io/images/gsl99a2h/production/cd6cc9dfb2b6b138aedbb7b1e8efa1cf6d767578-4501x4500.jpg?rect=714,1577,3231,1232&w=2000&fit=max&auto=format"
                         alt="Logo CoinInfo"
-                        width={80}
-                        height={80}
+                        width={600}
+                        height={150}
                     />
                     <div className='text-sm space-y-2 font-semibold'>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>
+                        <p className='cursor-pointer hover:hover:text-blue-800'>Cotação</p>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Contate-nos</p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>Anunciar</p>
                     </div>
-                    <div className='text-sm space-y-2 font-semibold'>
-                        <p className='cursor-pointer hover:text-blue-800'>Facebook</p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>Instagram</p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>TikTok</p>
-                    </div>
+                    {/* <div className='text-sm space-y-2 font-semibold'>
+                        <p className='cursor-pointer hover:text-blue-800'></p>
+                        <p className='cursor-pointer hover:hover:text-blue-800'></p>
+                        <p className='cursor-pointer hover:hover:text-blue-800'></p>
+                    </div> */}
                     <div className="flex items-center space-x-5 text-white  font-bold">
-                        <FaFacebook className="h-8 w-8 cursor-pointer hover:text-blue-800" />
-                        <FaInstagram className="h-8 w-8 cursor-pointer hover:text-blue-800" />
-                        <FaTiktok className="h-8 w-8 cursor-pointer hover:text-blue-800" />
+                        <Link href='https://www.facebook.com/profile.php?id=100080416249241'>
+                            <a target="_blank" rel="noreferrer">
+                                <FaFacebook className="h-8 w-8 cursor-pointer hover:text-blue-800" />
+                            </a>
+                        </Link>
+                        <Link href='https://www.instagram.com/coininfo_/'>
+                            <a target="_blank" rel="noreferrer">
+                                <FaInstagram className="h-8 w-8 cursor-pointer hover:text-blue-800" />
+                            </a>
+                        </Link>
+                        <Link href='https://www.tiktok.com/@coininfo_'>
+                            <a target="_blank" rel="noreferrer">
+                                <FaTiktok className="h-8 w-8 cursor-pointer hover:text-blue-800" />
+                            </a>
+                        </Link>
+                        <Link href='https://twitter.com/coininfo__'>
+                            <a target="_blank" rel="noreferrer">
+                                <FaTwitter className="h-8 w-8 cursor-pointer hover:text-blue-800" />
+                            </a>
+                        </Link>
                     </div>
 
                 </div>
