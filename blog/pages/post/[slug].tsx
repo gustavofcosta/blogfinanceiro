@@ -70,7 +70,6 @@ function Post({ post, filteredCoins, title }: Props) {
 
                 <Head>
                     <title>{post.title}</title>
-                    <link rel="icon" href="/favicon.ico" />
                     <meta name="description" content={post.description} />
                 </Head>
 
@@ -149,8 +148,8 @@ function Post({ post, filteredCoins, title }: Props) {
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-                        <h3 className="text-sm text-yellow-500">Gostou do artigo?</h3>
-                        <h4 className="text-3xl font-bold">Deixe um comentário abaixo!</h4>
+                        <p className="text-sm text-yellow-500">Gostou do artigo?</p>
+                        <p className="text-3xl font-bold">Deixe um comentário abaixo!</p>
                         <hr className="py-3 mt-2" />
 
                         <input
@@ -199,7 +198,7 @@ function Post({ post, filteredCoins, title }: Props) {
 
                 {/* Comments */}
                 <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
-                    <h3 className="text-4xl">Comentário</h3>
+                    <p className="text-4xl">Comentário</p>
                     <hr className="pb-2" />
 
                     {post.comments.map((comment) => (

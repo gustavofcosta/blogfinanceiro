@@ -56,6 +56,7 @@ export default function Price({ filteredCoins }: Props) {
                     key={coin.id}>
                     <div className="flex justify-center items-center pt-2 gap-2 text-xs">
                         <Image
+                            className='object-contain'
                             src={coin.image} alt={coin.name}
                             width={18}
                             height={18}
@@ -66,14 +67,14 @@ export default function Price({ filteredCoins }: Props) {
                     <div className="flex justify-center items-center text-xs">
                         {coin.price_change_percentage_24h < 0 ? (
                             <>
-                                <p className="text-red-500  mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                                <p className="text-red-500">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                                <p className="text-red-600 mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                                <p className="text-red-600">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                             </>
 
                         ) : (
                             <>
-                                <p className="text-green-500  mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                                <p className="text-green-500">{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                                <p className="text-green-600 mr-2">{coin.current_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                                <p className="text-green-600">{coin.price_change_percentage_24h.toFixed(2)}%</p>
                             </>
                         )}
                     </div>
