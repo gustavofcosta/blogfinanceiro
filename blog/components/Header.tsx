@@ -3,7 +3,6 @@ import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa'
 import Image from "next/image"
 
 
-
 export default function Header() {
     return (
         <header className=" flex justify-between p-5 max-w-7xl mx-auto pt-16">

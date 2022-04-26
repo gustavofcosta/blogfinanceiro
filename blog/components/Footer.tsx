@@ -9,15 +9,19 @@ function Footer() {
         <footer className='bg-[#0c0c0c] text-white mt-40'>
             <div className='max-w-6xl mx-auto px-4'>
                 <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-2 sm:h-72 lg:grid-cols-3 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
-                    <Image
-                        className="object-contain"
-                        src="https://cdn.sanity.io/images/gsl99a2h/production/cd6cc9dfb2b6b138aedbb7b1e8efa1cf6d767578-4501x4500.jpg?rect=714,1577,3231,1232&w=2000&fit=max&auto=format"
-                        alt="Logo CoinInfo"
-                        width={600}
-                        height={150}
-                    />
+                    <Link href='/'>
+                        <Image
+                            className="object-contain cursor-pointer"
+                            src="https://cdn.sanity.io/images/gsl99a2h/production/cd6cc9dfb2b6b138aedbb7b1e8efa1cf6d767578-4501x4500.jpg?rect=714,1577,3231,1232&w=2000&fit=max&auto=format"
+                            alt="Logo CoinInfo"
+                            width={600}
+                            height={150}
+                        />
+                    </Link>
                     <div className='text-sm space-y-2 font-semibold'>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>Sobre</p>
+                        <Link href='sobre'>
+                            <a className='cursor-pointer hover:hover:text-blue-800' aria-label='sobre'>Sobre</a>
+                        </Link>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Cotação</p>
                         <p className='cursor-pointer hover:hover:text-blue-800'>Contate-nos</p>
                     </div>
