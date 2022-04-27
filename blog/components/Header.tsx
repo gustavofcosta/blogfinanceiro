@@ -46,9 +46,9 @@ export default function Header() {
                         <FaTwitter className="h-6 w-6 cursor-pointer hover:text-blue-800" title="Twitter" />
                     </a>
                 </Link>
-                <Link href='/sidebar'>
+                {/* <Link href='/sidebar'>
                     <GiHamburgerMenu className="h-8 ml-2 sm:ml-10 w-8 cursor-pointer hover:text-blue-800" />
-                </Link>
+                </Link> */}
                 {/* <h3>
                     Sobre
                 </h3>
