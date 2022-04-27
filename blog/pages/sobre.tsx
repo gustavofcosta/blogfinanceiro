@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Price from "../components/Price";
 import { Prices } from "../typings";
+import { GiFlyingFlag, GiTrophyCup } from "react-icons/gi";
+import { BsBullseye } from "react-icons/bs";
 
 interface Props {
     filteredCoins: [Prices]
@@ -27,15 +29,28 @@ export default function Sobre({ filteredCoins, title, url }: Props) {
 
             <Price filteredCoins={filteredCoins} />
             <Header />
-            <div className="max-w-3xl mx-auto">
-                <div className="mt-20 text-center space-y-12 border-y border-black py-5">
-                    <div>
+            <div className="max-w-7xl mx-auto">
+                <div className="mt-20 space-y-16 p-5 text-center">
+                    <div className="flex flex-col items-center">
                         <h1 className="text-3xl font-bold uppercase">Sobre a CoinInfo</h1>
-                        <p className="font-semibold text-2xl p-4">A Coininfo atua no fornecimento de informação confíavel e educacional para o mercado de criptomoedas, proporcionando aos investidores um processo de tomada de decisão muito mais seguro.</p>
+                        <p className="text-xl p-4 lg:w-[800px] lg:h-10">A Coininfo atua no fornecimento de informação confíavel e educacional para o mercado de criptomoedas, proporcionando aos investidores um processo de tomada de decisão muito mais seguro.</p>
                     </div>
-                    <div>
-                        <h1 className="text-3xl font-bold uppercase">Missão</h1>
-                        <p className="font-semibold text-2xl p-4">Fornecer compreensão e informação confiável com alta tecnologia.</p>
+                    <div className="lg:flex space-y-20 lg:space-y-0 justify-center items-center lg:py-36 lg:space-x-16">
+                        <div className="flex flex-col items-center">
+                            <GiFlyingFlag className="text-7xl text-center mb-5 " />
+                            <h1 className="font-bold text-3xl uppercase">Missão</h1>
+                            <p className="text-xl p-4 w-[300px] lg:h-10">Fornecer compreensão e informação confiável com alta tecnologia.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <BsBullseye className="text-7xl text-center mb-5" />
+                            <h1 className="text-3xl font-bold uppercase">Visão</h1>
+                            <p className="text-xl p-4  w-[300px] lg:h-10">Atingir o posto definitivo de maior portal educacional e noticiario para o mercado de criptomoedas.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <GiTrophyCup className="text-7xl text-center mb-5" />
+                            <h1 className="text-3xl font-bold uppercase">Valores</h1>
+                            <p className="text-xl p-4  w-[300px] lg:h-10">Disseminar informação e conhecimento. Compromisso com a inovação. Excelência em toda e qualquer ação.</p>
+                        </div>
                     </div>
                 </div>
             </div>
