@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import * as ga from "../lib/ga";
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo-config'
+import Head from 'next/head';
 
 
 function MyApp({ Component, pageProps }: AppProps) {

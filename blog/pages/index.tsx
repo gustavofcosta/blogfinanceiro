@@ -32,8 +32,8 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
   return (
     <>
       <NextSeo
-        title='CoinInfo: Bitcoin, Ethereum, Investimento e Notícias sobre Criptomoedas e Preços'
-        description='Notícia, Educacional sobre Biticoin, Ethereum, blockchain, DeFi, Finanças digitais e notícias da Web 3.0.'
+        title='CoinInfo: Bitcoin, Ethereum, Investimento, Notícias sobre Criptomoedas e MarketCap'
+        description='Notícia, Educacional sobre criptomoedas | Bitcoin, Ethereum, blockchain, DeFi, Finanças digitais e notícias da Web 3.0.'
         canonical='https://coininfo.com.br'
         openGraph={{
           url,

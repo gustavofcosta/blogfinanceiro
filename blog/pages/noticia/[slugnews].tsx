@@ -66,13 +66,6 @@ function Noticia({ noticia, filteredCoins, title }: Props) {
 
                 <Price filteredCoins={filteredCoins} />
 
-
-                <Head>
-                    <title>{noticia.title}</title>
-                    <meta name="description" content={noticia.description} />
-                </Head>
-
-
                 <Header />
 
                 <Image

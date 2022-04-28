@@ -29,12 +29,15 @@ class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
-                    <link rel="shortcut icon" href="http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fgsl99a2h%2Fproduction%2F0b459e66fc8b3cb19949739f291081297c5a878b-4501x4500.jpg&w=48&q=75" type="image/x-icon" />
+                    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon" />
+                    <link rel="shortcut icon" href="/images/favicon.ico" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+
                     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link rel="apple-touch-icon" href="/example.png" />
-                    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async

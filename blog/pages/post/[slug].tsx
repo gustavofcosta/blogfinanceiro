@@ -68,12 +68,6 @@ function Post({ post, filteredCoins, title }: Props) {
 
                 <Price filteredCoins={filteredCoins} />
 
-                <Head>
-                    <title>{post.title}</title>
-                    <meta name="description" content={post.description} />
-                </Head>
-
-
                 <Header />
 
                 <Image
