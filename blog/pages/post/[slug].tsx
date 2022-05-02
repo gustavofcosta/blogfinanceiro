@@ -7,7 +7,6 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { useState } from "react"
 import Footer from "../../components/Footer"
 import Price from "../../components/Price"
-import Head from "next/head"
 import { NextSeo } from "next-seo"
 import Image from "next/image"
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Post } from '../typings'
 import { urlFor } from "../sanity"
-import { BsArrowDownCircle } from 'react-icons/bs'
+// import { BsArrowDownCircle } from 'react-icons/bs'
 
 interface Props {
     posts: [Post]
@@ -11,7 +11,7 @@ interface Props {
 export default function Educacional({ posts }: Props) {
     return (
         <>
-            <h1 className='uppercase text-2xl font-bold ml-5 mt-16'>Educacional</h1>
+            <h1 className='uppercase text-2xl font-bold ml-5 mt-16'></h1>
             <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
 
                 <div
@@ -37,7 +37,7 @@ export default function Educacional({ posts }: Props) {
                         </Link>
                     ))}
                 </div>
-                <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button>
+                {/* <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button> */}
             </div>
         </>
     )

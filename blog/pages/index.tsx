@@ -1,9 +1,9 @@
-import { sanityClient, urlFor } from "../sanity"
-import { Post, Prices, Noticia } from '../typings'
+import { sanityClient } from "../sanity"
+import { Post, Prices } from '../typings'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Price from '../components/Price'
-import Noticias from "../components/Noticias"
+// import Noticias from "../components/Noticias"
 import useWindowDimensions from '../components/UserWindow'
 import { NextSeo } from 'next-seo'
 import SubHeader from "../components/SubHeader"
@@ -14,12 +14,12 @@ import Educacional from "../components/Educacional"
 interface Props {
   posts: [Post]
   filteredCoins: [Prices]
-  noticias: [Noticia]
+  // noticias: [Noticia]
   title: string
   url: string
 }
 
-export default function Home({ posts, filteredCoins, noticias, title, url }: Props) {
+export default function Home({ posts, filteredCoins, title, url }: Props) {
 
   const { width } = useWindowDimensions()
 
@@ -32,8 +32,8 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
   return (
     <>
       <NextSeo
-        title='CoinInfo: Bitcoin, Ethereum, Investimento, Notícias sobre Criptomoedas e MarketCap'
-        description='Notícia, Educacional sobre criptomoedas | Bitcoin, Ethereum, blockchain, DeFi, Finanças digitais e notícias da Web 3.0.'
+        title='CoinInfo: Bitcoin, Ethereum, Investimento, Criptomoedas e MarketCap'
+        description='Educacional sobre criptomoedas | Bitcoin, Ethereum, blockchain, DeFi, Finanças digitais e Web 3.0.'
         canonical='https://coininfo.com.br'
         openGraph={{
           url,
@@ -46,7 +46,7 @@ export default function Home({ posts, filteredCoins, noticias, title, url }: Pro
         <Header />
         <SubHeader />
         {/* Noticias */}
-        <Noticias noticias={noticias} />
+        {/* <Noticias noticias={noticias} /> */}
         {/* Educacional */}
         <Educacional posts={posts} />
       </div>
@@ -72,23 +72,25 @@ export const getServerSideProps = async () => {
     slug
  }`;
 
-  const querynews = `*[_type == "noticia"] {
-    _id,
-    _createdAt,
-    title,
-    author-> {
-      name,
-      image
-  },
-    description,
-    video,
-    mainImage,
-    slugnews
-  }`;
+  // const querynews = `*[_type == "noticia"] {
+  //   _id,
+  //   _createdAt,
+  //   title,
+  //   author-> {
+  //     name,
+  //     image
+  // },
+  //   description,
+  //   video,
+  //   mainImage,
+  //   slugnews
+  // }`;
+
+
 
   const posts = await sanityClient.fetch(query)
 
-  const noticias = await sanityClient.fetch(querynews)
+  // const noticias = await sanityClient.fetch(querynews)
 
   const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=1&sparkline=false')
 
@@ -98,7 +100,8 @@ export const getServerSideProps = async () => {
     props: {
       posts,
       filteredCoins,
-      noticias
+      // noticias
     },
   }
 }
+

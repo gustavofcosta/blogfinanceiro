@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer className='bg-[#0c0c0c] text-white mt-40'>
             <div className='max-w-6xl mx-auto px-4'>
-                <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-2 sm:h-72 lg:grid-cols-3 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
+                <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-3 sm:h-72 lg:grid-cols-4 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
                     <Link href='/'>
                         <Image
                             className="object-contain cursor-pointer"
@@ -20,16 +20,26 @@ function Footer() {
                     </Link>
                     <div className='text-sm space-y-2 font-semibold'>
                         <Link href='sobre'>
-                            <a className='cursor-pointer hover:hover:text-blue-800' aria-label='sobre'>Sobre</a>
+                            <p aria-labelledby='sobre' className='cursor-pointer hover:hover:text-blue-800' aria-label='sobre'>Sobre</p>
                         </Link>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>Cotação</p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'>Contate-nos</p>
+                        <Link href='/'>
+                            <p aria-label='mercado cripto' className='cursor-pointer hover:hover:text-blue-800'>Mercado Cripto</p>
+                        </Link>
+                        <Link href='/'>
+                            <p aria-label='contate-nos' className='cursor-pointer hover:hover:text-blue-800'>Contate-nos</p>
+                        </Link>
                     </div>
-                    {/* <div className='text-sm space-y-2 font-semibold'>
-                        <p className='cursor-pointer hover:text-blue-800'></p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'></p>
-                        <p className='cursor-pointer hover:hover:text-blue-800'></p>
-                    </div> */}
+                    <div className='text-sm space-y-2 font-semibold'>
+                        <Link href='/politicas'>
+                            <p className='cursor-pointer hover:text-blue-800'>Políticas de privacidade</p>
+                        </Link>
+                        <Link href='/'>
+                            <p className='cursor-pointer hover:hover:text-blue-800'></p>
+                        </Link>
+                        <Link href='/'>
+                            <p className='cursor-pointer hover:hover:text-blue-800'></p>
+                        </Link>
+                    </div>
                     <div className="flex items-center space-x-5 text-white  font-bold">
                         <Link href='https://www.facebook.com/profile.php?id=100080416249241'>
                             <a target="_blank" rel="noreferrer" aria-label='Facebook'>
