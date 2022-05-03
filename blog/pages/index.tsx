@@ -69,7 +69,7 @@ export const getServerSideProps  = async () => {
 
   const posts = await sanityClient.fetch(query)
 
-  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=false')
+  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=25&page=1&sparkline=false')
 
   const filteredCoins = await res.json()
 
