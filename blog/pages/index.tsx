@@ -78,6 +78,6 @@ export const getStaticProps = async () => {
       posts,
       filteredCoins,
     },
-    revalidate: 20,
+    revalidate: 60,
   }
 }
