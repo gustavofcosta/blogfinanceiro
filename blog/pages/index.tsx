@@ -57,7 +57,7 @@ export default function Home({ posts, filteredCoins, title, url }: Props) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "post"] {
     _id,
     _createdAt,
