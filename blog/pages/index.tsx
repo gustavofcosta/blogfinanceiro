@@ -51,18 +51,6 @@ export default function Home({ posts, filteredCoins, title, url }: Props) {
   )
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-
-  const filteredCoins = await res.json()
-  
-  return {
-    props: {
-      filteredCoins,
-    },
-    revalidate: 60
-  }
-}
 
 export const getServerSideProps  = async () => {
   const query = `*[_type == "post"] {
@@ -79,12 +67,17 @@ export const getServerSideProps  = async () => {
     slug
  }`;
 
+  const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=100&page=1&sparkline=false')
 
+  const filteredCoins = await res.json()
+  
   const posts = await sanityClient.fetch(query)
 
   return {
     props: {
       posts,
+      filteredCoins,
     },
+    revalidate: 60
   }
 }
