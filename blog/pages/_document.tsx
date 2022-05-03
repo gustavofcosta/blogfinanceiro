@@ -6,6 +6,8 @@ import Document, {
     DocumentContext,
 } from 'next/document';
 
+import Script from 'next/script'
+
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
         const originalRenderPage = ctx.renderPage
@@ -39,12 +41,12 @@ class MyDocument extends Document {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
-                    <NextScript
+                    <Script
                         strategy="lazyOnload"
                         async
                         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
                     />
-                    <NextScript
+                    <Script
                         strategy="lazyOnload"
                         dangerouslySetInnerHTML={{
                             __html: `
