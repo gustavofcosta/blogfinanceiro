@@ -3,7 +3,6 @@ import { Post, Prices } from '../typings'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Price from '../components/Price'
-// import Noticias from "../components/Noticias"
 import useWindowDimensions from '../components/UserWindow'
 import { NextSeo } from 'next-seo'
 import SubHeader from "../components/SubHeader"
@@ -14,7 +13,6 @@ import Educacional from "../components/Educacional"
 interface Props {
   posts: [Post]
   filteredCoins: [Prices]
-  // noticias: [Noticia]
   title: string
   url: string
 }
@@ -40,14 +38,10 @@ export default function Home({ posts, filteredCoins, title, url }: Props) {
           title,
         }}
       />
-      {/* Cotação movel */}
       <Price filteredCoins={filteredCoins} />
       <div className="max-w-7xl mx-auto">
         <Header />
         <SubHeader />
-        {/* Noticias */}
-        {/* <Noticias noticias={noticias} /> */}
-        {/* Educacional */}
         <Educacional posts={posts} />
       </div>
       <Footer />
@@ -57,7 +51,7 @@ export default function Home({ posts, filteredCoins, title, url }: Props) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps  = async () => {
   const query = `*[_type == "post"] {
     _id,
     _createdAt,
@@ -72,25 +66,8 @@ export const getStaticProps = async () => {
     slug
  }`;
 
-  // const querynews = `*[_type == "noticia"] {
-  //   _id,
-  //   _createdAt,
-  //   title,
-  //   author-> {
-  //     name,
-  //     image
-  // },
-  //   description,
-  //   video,
-  //   mainImage,
-  //   slugnews
-  // }`;
-
-
 
   const posts = await sanityClient.fetch(query)
-
-  // const noticias = await sanityClient.fetch(querynews)
 
   const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=1&sparkline=false')
 
@@ -100,8 +77,6 @@ export const getStaticProps = async () => {
     props: {
       posts,
       filteredCoins,
-      // noticias
     },
   }
 }
-
