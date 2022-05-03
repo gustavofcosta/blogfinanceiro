@@ -42,7 +42,7 @@ export default function Home({ posts, filteredCoins, title, url }: Props) {
       <div className="max-w-7xl mx-auto">
         <Header />
         <SubHeader />
-        <Educacional posts={posts[0]} />
+        <Educacional posts={posts} />
       </div>
       <Footer />
     </>
