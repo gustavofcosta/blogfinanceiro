@@ -39,11 +39,13 @@ class MyDocument extends Document {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
-                    <script
+                    <NextScript
+                        strategy="lazyOnload"
                         async
                         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
                     />
-                    <script
+                    <NextScript
+                        strategy="lazyOnload"
                         dangerouslySetInnerHTML={{
                             __html: `
                         window.dataLayer = window.dataLayer || [];
