@@ -16,8 +16,8 @@ export default function Educacional({ posts }: Props) {
 
                 <div
                     className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 p-4 md:p-6 '>
-                    {posts.map((post) => (
-                        <Link key={post._id} href={`/post/${post.slug.current}`}>
+                    {posts.map((post, index) => (
+                        <Link key={index} href={`/post/${post.slug.current}`}>
                             <div className='border rounded-lg group cursor-pointer overflow-hidden shadow-xl'>
                                 <Image
                                     className='h-44 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
