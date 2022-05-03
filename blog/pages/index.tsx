@@ -78,5 +78,6 @@ export const getServerSideProps  = async () => {
       posts,
       filteredCoins,
     },
+    revalidate: 20,
   }
 }
