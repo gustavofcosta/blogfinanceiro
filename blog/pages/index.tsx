@@ -73,7 +73,7 @@ export const getStaticProps = async () => {
   
   const posts = await sanityClient.fetch(query)
   
-  posts.sort((a, b) => a.position > b.position ? 1 : -1)
+//   posts.sort((a, b) => a.position > b.position ? 1 : -1)
 
   return {
     props: {
