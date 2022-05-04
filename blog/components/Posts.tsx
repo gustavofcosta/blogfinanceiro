@@ -2,22 +2,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Post } from '../typings'
 import { urlFor } from "../sanity"
-// import { BsArrowDownCircle } from 'react-icons/bs'
 
 interface Props {
-    posts: [Post]
+    posts: any[]
 }
 
-export default function Educacional({ posts }: Props) {
+export default function Posts({ posts }: Props) {
     return (
         <>
-            <h1 className='uppercase text-2xl font-bold ml-5 mt-16'></h1>
-            <div className='border-y border-gray-400 mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
+            <h1 className='uppercase text-2xl font-bold ml-5 mt-10'></h1>
+            <div className='mt-5 flex flex-col justify-center items-center px-10 space-y-5'>
 
                 <div
                     className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 p-4 md:p-6 '>
-                    {posts.map((post, index) => (
-                        <Link key={index} href={`/post/${post.slug.current}`}>
+                    {posts.map((post) => (
+                        <Link key={post._id} href={`/post/${post.slug.current}`}>
                             <div className='border rounded-lg group cursor-pointer overflow-hidden shadow-xl'>
                                 <Image
                                     className='h-44 object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
@@ -37,7 +36,6 @@ export default function Educacional({ posts }: Props) {
                         </Link>
                     ))}
                 </div>
-                {/* <button className='animate-bounce text-3xl py-6' aria-label='carregar mais'><BsArrowDownCircle /></button> */}
             </div>
         </>
     )

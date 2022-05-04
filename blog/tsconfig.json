@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/UserWindow.tsx",
-    "pages/api/my-sitemap.js"
+    "pages/api/my-sitemap.js",
+    "uteis/load-posts.jsx"
   ],
   "exclude": [
     "node_modules"

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function Footer() {
     return (
-        <footer className='bg-[#0c0c0c] text-white mt-40'>
+        <footer className='bg-[#0c0c0c] text-white mt-32'>
             <div className='max-w-6xl mx-auto px-4'>
                 <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-3 sm:h-72 lg:grid-cols-4 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
                     <Link href='/'>

@@ -29,11 +29,7 @@ export default {
       type: 'reference',
       to: { type: 'author' },
     },
-    {
-      name: 'video',
-      title: 'url',
-      type: 'url',
-    },
+
     {
       name: 'mainImage',
       title: 'Main image',
@@ -53,13 +49,22 @@ export default {
       title: 'Published at',
       type: 'datetime',
     },
+
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     },
+
   ],
 
+  orderings: [
+    {
+      title: "Manual order",
+      name: "manualOrder",
+      by: [{ field: "order", direction: "asc" }],
+    },
+  ],
 
   preview: {
     select: {
