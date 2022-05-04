@@ -100,7 +100,7 @@ export default function Home({ loadPosts, filteredCoins, title, url }: Props) {
 
         {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
 
-        {filteredPosts.length === 0 && <p className="mt-5 text-lg text-gray-500 font-semibold flex justify-center">Sua pesquisa não encontrou nenhuma postagem correspondente</p>}
+        {filteredPosts.length === 0 && <p className="mt-5 text-lg text-gray-500 font-semibold flex justify-center text-center px-4">Sua pesquisa não encontrou nenhuma postagem correspondente</p>}
 
         <div className="flex justify-center">
           {!searchValue && <Button onClick={loadMorePosts} disabled={noMorePosts} />}

@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer className='bg-[#0c0c0c] text-white mt-32'>
             <div className='max-w-6xl mx-auto px-4'>
-                <div className='grid items-center justify-center grid-cols-2  p-8 ml-5 sm:grid-cols-3 sm:h-72 lg:grid-cols-4 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
+                <div className='grid items-center justify-center grid-cols-2  p-8 sm:grid-cols-3 sm:h-72 lg:grid-cols-4 gap-10 md:gap-8 lg:h-44 md:p-6 uppercase'>
                     <Link href='/'>
                         <Image
                             className="object-contain cursor-pointer"
@@ -40,25 +40,25 @@ function Footer() {
                             <p className='cursor-pointer hover:hover:text-blue-800'></p>
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-5 text-white  font-bold">
+                    <div className="flex items-center space-x-7 text-white  font-bold">
                         <Link href='https://www.facebook.com/profile.php?id=100080416249241'>
                             <a target="_blank" rel="noreferrer" aria-label='Facebook'>
-                                <FaFacebook className="h-8 w-8 cursor-pointer hover:text-blue-800" title="Facebook" />
+                                <FaFacebook className="h-6 w-6 cursor-pointer hover:text-blue-800" title="Facebook" />
                             </a>
                         </Link>
                         <Link href='https://www.instagram.com/coininfo_/'>
                             <a target="_blank" rel="noreferrer" aria-label='Instagram'>
-                                <FaInstagram className="h-8 w-8 cursor-pointer hover:text-blue-800" title="Instagram" />
+                                <FaInstagram className="h-6 w-6 cursor-pointer hover:text-blue-800" title="Instagram" />
                             </a>
                         </Link>
                         <Link href='https://www.tiktok.com/@coininfo_'>
                             <a target="_blank" rel="noreferrer" aria-label='Tiktok'>
-                                <FaTiktok className="h-8 w-8 cursor-pointer hover:text-blue-800" title="Tiktok" />
+                                <FaTiktok className="h-6 w-6 cursor-pointer hover:text-blue-800" title="Tiktok" />
                             </a>
                         </Link>
                         <Link href='https://twitter.com/coininfo__'>
                             <a target="_blank" rel="noreferrer" aria-label='Twitter'>
-                                <FaTwitter className="h-8 w-8 cursor-pointer hover:text-blue-800" title="Twitter" />
+                                <FaTwitter className="h-6 w-6 cursor-pointer hover:text-blue-800" title="Twitter" />
                             </a>
                         </Link>
                     </div>
