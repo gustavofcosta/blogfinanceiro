@@ -22,7 +22,7 @@ function Footer() {
                         <Link href='sobre'>
                             <p aria-labelledby='sobre' className='cursor-pointer hover:hover:text-blue-800' aria-label='sobre'>Sobre</p>
                         </Link>
-                        <Link href='/'>
+                        <Link href='/marketcap'>
                             <p aria-label='mercado cripto' className='cursor-pointer hover:hover:text-blue-800'>Mercado Cripto</p>
                         </Link>
                         <Link href='/'>
@@ -64,9 +64,12 @@ function Footer() {
                     </div>
 
                 </div>
-                <hr className='max-w-full my-1 mx-auto border border-white' />
+                <hr className='max-w-full my-1 mx-auto border border-white text-sm' />
                 <div className='flex justify-center py-1 text-xs lg:text-sm'>
-                    <p>InfoCoin criptomoedas. ©2022 Todos os direitos reservados.</p>
+                    <p>InfoCoin. ©2022 Todos os direitos reservados.</p>
+                </div>
+                <div className='flex justify-center py-1 text-xs lg:text-sm'>
+                    <Link href="https://gustavofernandes.vercel.app/"><a className='hover:text-blue-800 cursor-pointer' target="_blank"> Desenvolvido por Gustavo F.C</a></Link>
                 </div>
             </div>
         </footer>
