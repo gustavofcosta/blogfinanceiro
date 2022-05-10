@@ -41,13 +41,13 @@ class MyDocument extends Document {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
-                    <Script
-                        strategy="lazyOnload"
+                    <script
+                        
                         async
                         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
                     />
-                    <Script
-                        strategy="lazyOnload"
+                    <script
+                      
                         dangerouslySetInnerHTML={{
                             __html: `
                         window.dataLayer = window.dataLayer || [];
@@ -59,6 +59,8 @@ class MyDocument extends Document {
                     `,
                         }}
                     />
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731937258423372"
+                         crossorigin="anonymous" />
                 </Head>
                 <body>
                     <Main />
