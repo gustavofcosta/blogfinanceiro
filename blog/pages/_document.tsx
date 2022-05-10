@@ -45,7 +45,7 @@ class MyDocument extends Document {
                         
                         async
                         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-                    ></script>
+                    />
                     <script
                       
                         dangerouslySetInnerHTML={{
@@ -58,9 +58,9 @@ class MyDocument extends Document {
                         });
                     `,
                         }}
-                    ></script>
+                    />
                   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731937258423372"
-                    crossorigin="anonymous"></script>
+                    crossorigin="anonymous" />
                 </Head>
                 <body>
                     <Main />
