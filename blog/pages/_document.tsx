@@ -40,6 +40,9 @@ class MyDocument extends Document {
                     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    {/* Google Adsense */}
+                    <script data-ad-client="ca-pub-8731937258423372" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                        crossOrigin="anonymous" />
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         
@@ -59,8 +62,6 @@ class MyDocument extends Document {
                     `,
                         }}
                     />
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731937258423372"
-                    crossOrigin="anonymous" />
                 </Head>
                 <body>
                     <Main />
